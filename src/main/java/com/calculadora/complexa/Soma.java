@@ -1,0 +1,10 @@
+package com.calculadora.complexa;
+public class Soma implements Operacoes {
+
+    @Override
+    public float calcular() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcular'");
+    }
+
+}
