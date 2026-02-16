@@ -6,11 +6,12 @@ public class ControleCalculo {
 
     Scanner input = new Scanner (System.in);
     Multiplicacao multiplicacao;
+    Divisao divisao;
 
     private float num;
     private float resultado;
     private ArrayList<Float> lista = new ArrayList <>();
-    boolean condicao = false; 
+    private boolean condicao = false; 
 
     float calcularMultiplicacao (float resultado){
             
@@ -21,7 +22,7 @@ public class ControleCalculo {
 
                 lista.add(num); // adiciona a lista
 
-                if (num == 1) { // se pedir o resultado apertando 1
+                if (num == 1) { // se pedir o resultado apertando 0
                     
                     this.multiplicacao = new Multiplicacao (this); // precisa instanciar senão dá erro de NULL POINT
                     multiplicacao.calcular();
@@ -31,6 +32,29 @@ public class ControleCalculo {
             }
 
             return resultado; // nao esquecer de retornar no fim do bloco
+
+    }
+
+    float calcularDivisao (float resultado) {
+
+        while (condicao == false) {
+
+            System.out.println("Digite um número para dividir. Digite 1 para finalizar:");
+            num = input.nextFloat();
+
+            lista.add(num); // adiciona a lista de numeros calculados
+
+            if (num == 1) {
+
+                this.divisao = new Divisao (this);
+                divisao.calcular();
+
+            }
+
+        }
+
+        return resultado; // antes de criar o método na classe divisao, ele não estará retornando nada, pois o retorno ainda não existe
+        //PRESTAR BASTANTE ATENÇÃO ONDE COLOCA O RETURN!!!
 
     }
 

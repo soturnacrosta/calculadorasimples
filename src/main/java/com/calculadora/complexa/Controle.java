@@ -27,9 +27,8 @@ public class Controle {
                 break;
 
             case "2":
-
-                Divisao dividir = new Divisao();
-                dividir.calcular();
+                // a classe de controle calculo ja foi instanciada la em cima, basta chamar os métodos dela que chama os metodos das classes de calculo
+                controleCalculo.calcularDivisao(3);
                 break;
 
             case "3":
@@ -56,6 +55,30 @@ public class Controle {
 
         }
 
+    }
+
+    public Scanner getInput() {
+        return input;
+    }
+
+    public void setInput(Scanner input) {
+        this.input = input;
+    }
+
+    public String getEscolher() {
+        return escolher;
+    }
+
+    public void setEscolher(String escolher) {
+        this.escolher = escolher;
+    }
+
+    public ControleCalculo getControleCalculo() {
+        return controleCalculo;
+    }
+
+    public void setControleCalculo(ControleCalculo controleCalculo) {
+        this.controleCalculo = controleCalculo;
     }
     
 }
