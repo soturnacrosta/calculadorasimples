@@ -42,13 +42,23 @@ public class ControleCalculo {
             System.out.println("Digite um número para dividir. Digite 1 para finalizar:");
             num = input.nextFloat();
 
+            if (num == 0){ //prevenção de erro, precisa limpar lá na classe
+                
+                System.out.println("Valor inválido! Não é possível dividir por zero.");
+
+            }
+
+            else {
+
             lista.add(num); // adiciona a lista de numeros calculados
 
+            }
+
             if (num == 1) {
-
+                // this.divisao se refere a Divisao divisao chamado fora do método
                 this.divisao = new Divisao (this);
+                //(this) se refere a propria classe ControleCalculo, mas chamando a classe Divisão
                 divisao.calcular();
-
             }
 
         }

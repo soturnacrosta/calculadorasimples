@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Divisao implements Operacoes {
 
-    private ControleCalculo controleCalculo; // para acessar getters e setters
+    private ControleCalculo controleCalculo; // para acessar getters e setters. evita null point exceptions
 
     public Divisao(ControleCalculo controleCalculo) {
         this.controleCalculo = controleCalculo;
@@ -24,7 +24,11 @@ public class Divisao implements Operacoes {
             if (n == 0) {
                 
                 System.out.println("Erro: Divisão por zero!");
-                // Trate o erro conforme sua lógica (ex: setar erro no controle)
+                // tratar o erro após a prevenção
+                lista.clear(); //limpa a lista suja
+                controleCalculo.setResultado(0);
+                controleCalculo.setCondicao(true); // Para o laço do painel se necessário
+                
                 return 0;
 
             }
