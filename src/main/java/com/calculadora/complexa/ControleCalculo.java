@@ -7,6 +7,7 @@ public class ControleCalculo {
     Scanner input = new Scanner (System.in);
     Multiplicacao multiplicacao;
     Divisao divisao;
+    Soma soma;
 
     private float num;
     private float resultado;
@@ -65,6 +66,28 @@ public class ControleCalculo {
 
         return resultado; // antes de criar o método na classe divisao, ele não estará retornando nada, pois o retorno ainda não existe
         //PRESTAR BASTANTE ATENÇÃO ONDE COLOCA O RETURN!!!
+
+    }
+
+    float calcularSoma (float resultado) {
+
+        while (condicao == false) {
+
+            System.out.println("Digite um número para somar. Digite 0 para finalizar:");
+            num = input.nextFloat();
+
+            lista.add(num);
+            
+            if (num == 0) {
+
+                this.soma = new Soma(this);
+                soma.calcular();
+
+            }
+
+        }
+
+        return resultado; //prestar atenção onde fica o return!!!
 
     }
 

@@ -33,8 +33,7 @@ public class Controle {
 
             case "3":
 
-                Soma somar = new Soma ();
-                somar.calcular();
+                controleCalculo.calcularSoma(3);
                 break;
 
             case "4":

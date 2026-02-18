@@ -11,7 +11,7 @@ public class Multiplicacao implements Operacoes {
     @Override
     public float calcular() {
         
-        controleCalculo.setResultado(1);
+        controleCalculo.setResultado(1); // reseta a operação para 1 no final do calculo
 
         for (float n : controleCalculo.getLista()){
 
