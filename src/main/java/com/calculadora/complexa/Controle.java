@@ -21,25 +21,25 @@ public class Controle {
         
         switch (escolher) {
 
-            case "1": //aspas duplas para reconhecer como string e nao int
+            case "1": //multiplicação
+                //aspas duplas para reconhecer como string e nao int
                 
                 controleCalculo.calcularMultiplicacao(3); // chama o método de calculo das classes
                 break;
 
-            case "2":
+            case "2": //divisão
                 // a classe de controle calculo ja foi instanciada la em cima, basta chamar os métodos dela que chama os metodos das classes de calculo
                 controleCalculo.calcularDivisao(3);
                 break;
 
-            case "3":
+            case "3": //soma 
 
                 controleCalculo.calcularSoma(3);
                 break;
 
-            case "4":
+            case "4": //subtração
 
-                Subtracao subtrair = new Subtracao();
-                subtrair.calcular();
+                controleCalculo.calcularSubtracao(3);
                 break;
 
             case "0":

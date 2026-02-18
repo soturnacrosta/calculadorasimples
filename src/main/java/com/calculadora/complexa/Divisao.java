@@ -33,9 +33,10 @@ public class Divisao implements Operacoes {
 
             }
         
-        res /= n;
+            res /= n;
 
         }
+        
             System.out.println("O resultado é: " + res);
             controleCalculo.setCondicao(true); //finalizar o laço while
 

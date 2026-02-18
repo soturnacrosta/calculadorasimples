@@ -6,6 +6,7 @@ public class Main {
         Controle operacoes = new Controle ();
 
         operacoes.PainelControle(); 
-
+        //o main apenas chama a classe principal.
     }
+
 }

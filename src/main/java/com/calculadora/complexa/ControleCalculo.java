@@ -8,6 +8,7 @@ public class ControleCalculo {
     Multiplicacao multiplicacao;
     Divisao divisao;
     Soma soma;
+    Subtracao subtracao;
 
     private float num;
     private float resultado;
@@ -88,6 +89,27 @@ public class ControleCalculo {
         }
 
         return resultado; //prestar atenção onde fica o return!!!
+
+    }
+
+    float calcularSubtracao (float resultado) {
+
+        while (condicao == false) {
+
+            System.out.println("Digite um número para subtrair. Digite 0 para finalizar:");
+            num = input.nextFloat();
+
+            lista.add(num);
+
+            if (num == 0) {
+
+                this.subtracao = new Subtracao(this);
+                subtracao.calcular();
+
+            }
+        }
+
+        return resultado;
 
     }
 
