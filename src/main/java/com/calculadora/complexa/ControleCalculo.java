@@ -11,6 +11,7 @@ public class ControleCalculo {
     Subtracao subtracao;
 
     private float num;
+    private String entrada;
     private float resultado;
     private ArrayList<Float> lista = new ArrayList <>();
     private boolean condicao = false; 
@@ -19,15 +20,20 @@ public class ControleCalculo {
             
             while (condicao == false) {
 
-                System.out.println("Digite um número para multiplicar. Digite 1 para finalizar:");
-                num = input.nextFloat();
+                System.out.println("Digite um número para multiplicar. Digite '=' para resultado:");
+                entrada = input.nextLine();
 
-                lista.add(num); // adiciona a lista
+                if (entrada.equalsIgnoreCase("=")) { // não precisa separar o finalizar do resultado, faça tudo de uma vez!
 
-                if (num == 1) { // se pedir o resultado apertando 0
-                    
                     this.multiplicacao = new Multiplicacao (this); // precisa instanciar senão dá erro de NULL POINT
                     multiplicacao.calcular();
+
+                }
+
+                else {
+
+                    num = Float.parseFloat(entrada);
+                    lista.add(num); // adiciona a lista
 
                 }
 
@@ -41,26 +47,32 @@ public class ControleCalculo {
 
         while (condicao == false) {
 
-            System.out.println("Digite um número para dividir. Digite 1 para finalizar:");
-            num = input.nextFloat();
+            System.out.println("Digite um número para dividir. Digite '=' para resultado:");
+            entrada = input.nextLine();
 
-            if (num == 0){ //prevenção de erro, precisa limpar lá na classe
-                
-                System.out.println("Valor inválido! Não é possível dividir por zero.");
-
-            }
-
-            else {
-
-            lista.add(num); // adiciona a lista de numeros calculados
-
-            }
-
-            if (num == 1) {
+            if (entrada.equalsIgnoreCase("=")) {
                 // this.divisao se refere a Divisao divisao chamado fora do método
                 this.divisao = new Divisao (this);
                 //(this) se refere a propria classe ControleCalculo, mas chamando a classe Divisão
                 divisao.calcular();
+            }
+
+            else {
+
+                num = Float.parseFloat(entrada);
+
+                if (num == 0){ //prevenção de erro, precisa limpar lá na classe
+                
+                    System.out.println("Valor inválido! Não é possível dividir por zero.");
+
+                }
+
+                else { //preste atenção nos else! tem que ter!!!
+
+                    lista.add(num); // adiciona a lista de numeros calculados
+
+                }
+
             }
 
         }
@@ -74,15 +86,20 @@ public class ControleCalculo {
 
         while (condicao == false) {
 
-            System.out.println("Digite um número para somar. Digite 0 para finalizar:");
-            num = input.nextFloat();
-
-            lista.add(num);
+            System.out.println("Digite um número para somar. Digite '=' para resultado:");
+            entrada = input.nextLine();
             
-            if (num == 0) {
+            if (entrada.equalsIgnoreCase("=")) {
 
                 this.soma = new Soma(this);
                 soma.calcular();
+
+            }
+
+            else {
+
+                num = Float.parseFloat(entrada);
+                lista.add(num);
 
             }
 
@@ -96,17 +113,23 @@ public class ControleCalculo {
 
         while (condicao == false) {
 
-            System.out.println("Digite um número para subtrair. Digite 0 para finalizar:");
-            num = input.nextFloat();
+            System.out.println("Digite um número para subtrair. Digite '=' para resultado:");
+            entrada = input.nextLine();
 
-            lista.add(num);
-
-            if (num == 0) {
+            if (entrada.equalsIgnoreCase("=")) {
 
                 this.subtracao = new Subtracao(this);
                 subtracao.calcular();
 
             }
+
+            else {
+
+                num = Float.parseFloat(entrada);
+                lista.add(num);
+
+            }
+
         }
 
         return resultado;

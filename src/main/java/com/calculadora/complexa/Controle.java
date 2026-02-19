@@ -19,7 +19,7 @@ public class Controle {
             escolher = input.nextLine();
 
         
-        switch (escolher) {
+        switch (escolher) { //daqui entra em ControleCalculo;
 
             case "1": //multiplicação
                 //aspas duplas para reconhecer como string e nao int
