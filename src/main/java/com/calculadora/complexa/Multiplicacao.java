@@ -9,11 +9,11 @@ public class Multiplicacao implements Operacoes {
     }
 
     @Override
-    public float calcular() {
+    public double calcular() {
         
         controleCalculo.setResultado(1); // reseta a operação para 1 no final do calculo
 
-        for (float n : controleCalculo.getLista()){
+        for (double n : controleCalculo.getLista()){
 
             controleCalculo.setResultado(controleCalculo.getResultado()*n);
             // não põe o return aqui

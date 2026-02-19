@@ -10,18 +10,18 @@ public class Subtracao implements Operacoes {
     }
 
     @Override
-    public float calcular() {
+    public double calcular() {
         
-        List<Float> lista = controleCalculo.getLista(); //a getList() retorna todos os indices da lista. 
+        List<Double> lista = controleCalculo.getLista(); //a getList() retorna todos os indices da lista. 
         
         if (controleCalculo.getLista().size() > 0) { //Sempre verifique o tamanho da lista antes de pedir o get(0). Se a lista estiver vazia e você
         //tentar acessar a posição 0, o Java vai lançar um erro chamado IndexOutOfBoundsException.
 
-            float res = lista.get(0);
+            double res = lista.get(0);
 
                 for (int i = 1; i < lista.size(); i++){
 
-                    float n = lista.get(i);
+                    double n = lista.get(i);
 
                     res -= n; //atentar na operação corretamente
 

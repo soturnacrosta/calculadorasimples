@@ -10,16 +10,16 @@ public class Divisao implements Operacoes {
     }
 
     @Override
-    public float calcular() {
+    public double calcular() {
         
-        List<Float> lista = controleCalculo.getLista(); //cria uma variavel lista do tipo Lista para acessar a posição da lista. ele deve ficar dentro do método!!!
+        List<Double> lista = controleCalculo.getLista(); //cria uma variavel lista do tipo Lista para acessar a posição da lista. ele deve ficar dentro do método!!!
 
-        float res = lista.get(0); //instancie o método, não a classe!
+        double res = lista.get(0); //instancie o método, não a classe!
         // precisa pegar a posição do índice
 
         for (int i = 1; i < lista.size(); i++) {
 
-            float n = lista.get(i);
+            double n = lista.get(i);
 
             if (n == 0) {
                 

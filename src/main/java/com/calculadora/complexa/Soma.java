@@ -9,11 +9,11 @@ public class Soma implements Operacoes {
     }
 
     @Override
-    public float calcular() {
+    public double calcular() {
         
         controleCalculo.setResultado(0); //reseta o resultado para 0 ao fim do calculo
 
-        for (float n : controleCalculo.getLista()){ //aqui ele não precisa encontrar a primeira posição na lista, pois a ordem dos fatores não altera o resultado
+        for (double n : controleCalculo.getLista()){ //aqui ele não precisa encontrar a primeira posição na lista, pois a ordem dos fatores não altera o resultado
 
             controleCalculo.setResultado(controleCalculo.getResultado() + n);
 

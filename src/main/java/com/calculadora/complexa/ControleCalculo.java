@@ -10,13 +10,13 @@ public class ControleCalculo {
     Soma soma;
     Subtracao subtracao;
 
-    private float num;
+    private double num;
     private String entrada;
-    private float resultado;
-    private ArrayList<Float> lista = new ArrayList <>();
+    private double resultado;
+    private ArrayList<Double> lista = new ArrayList <>();
     private boolean condicao = false; 
 
-    float calcularMultiplicacao (float resultado){
+    double calcularMultiplicacao (double resultado){
             
             while (condicao == false) {
 
@@ -32,7 +32,7 @@ public class ControleCalculo {
 
                 else {
 
-                    num = Float.parseFloat(entrada);
+                    num = Double.parseDouble(entrada);
                     lista.add(num); // adiciona a lista
 
                 }
@@ -43,7 +43,7 @@ public class ControleCalculo {
 
     }
 
-    float calcularDivisao (float resultado) {
+    double calcularDivisao (double resultado) {
 
         while (condicao == false) {
 
@@ -59,7 +59,7 @@ public class ControleCalculo {
 
             else {
 
-                num = Float.parseFloat(entrada);
+                num = Double.parseDouble(entrada);
 
                 if (num == 0){ //prevenção de erro, precisa limpar lá na classe
                 
@@ -82,7 +82,7 @@ public class ControleCalculo {
 
     }
 
-    float calcularSoma (float resultado) {
+    double calcularSoma (double resultado) {
 
         while (condicao == false) {
 
@@ -98,7 +98,7 @@ public class ControleCalculo {
 
             else {
 
-                num = Float.parseFloat(entrada);
+                num = Double.parseDouble(entrada);
                 lista.add(num);
 
             }
@@ -109,7 +109,7 @@ public class ControleCalculo {
 
     }
 
-    float calcularSubtracao (float resultado) {
+    double calcularSubtracao (double resultado) {
 
         while (condicao == false) {
 
@@ -125,7 +125,7 @@ public class ControleCalculo {
 
             else {
 
-                num = Float.parseFloat(entrada);
+                num = Double.parseDouble (entrada);
                 lista.add(num);
 
             }
@@ -136,27 +136,27 @@ public class ControleCalculo {
 
     }
 
-    public float getNum() {
+    public double getNum() {
         return num;
     }
 
-    public void setNum(float num) {
+    public void setNum(double num) {
         this.num = num;
     }
 
-    public float getResultado() {
+    public double getResultado() {
         return resultado;
     }
 
-    public void setResultado(float resultado) {
+    public void setResultado(double resultado) {
         this.resultado = resultado;
     }
 
-    public ArrayList<Float> getLista() {
+    public ArrayList<Double> getLista() {
         return lista;
     }
 
-    public void setLista(ArrayList<Float> lista) {
+    public void setLista(ArrayList<Double> lista) {
         this.lista = lista;
     }
 
