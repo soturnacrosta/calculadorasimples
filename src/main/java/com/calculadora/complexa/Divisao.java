@@ -13,7 +13,6 @@ public class Divisao implements Operacoes {
     public double calcular() {
         
         List<Double> lista = controleCalculo.getLista(); //cria uma variavel lista do tipo Lista para acessar a posição da lista. ele deve ficar dentro do método!!!
-
         double res = lista.get(0); //instancie o método, não a classe!
         // precisa pegar a posição do índice
 
@@ -39,6 +38,7 @@ public class Divisao implements Operacoes {
         
             System.out.println("O resultado é: " + res);
             controleCalculo.setCondicao(true); //finalizar o laço while
+            controleCalculo.setResultado(res); // TEM QUE SALVAR NA VARIAVEL GLOBAL!
 
             return res;
 

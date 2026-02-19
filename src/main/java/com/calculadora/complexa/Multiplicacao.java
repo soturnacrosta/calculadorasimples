@@ -11,18 +11,20 @@ public class Multiplicacao implements Operacoes {
     @Override
     public double calcular() {
         
-        controleCalculo.setResultado(1); // reseta a operação para 1 no final do calculo
+        double multiplicacaoLocal = 1;
 
         for (double n : controleCalculo.getLista()){
 
-            controleCalculo.setResultado(controleCalculo.getResultado()*n);
+            multiplicacaoLocal *= n;
             // não põe o return aqui
         }
+
+            controleCalculo.setResultado(multiplicacaoLocal);
 
             System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
             controleCalculo.setCondicao(true);
 
-            return controleCalculo.getResultado(); //retorna o numero do resultado
+            return multiplicacaoLocal; //retorna o numero do resultado
 
     }
 

@@ -5,52 +5,57 @@ public class Controle {
 
     Scanner input = new Scanner (System.in);
     String escolher; 
+    boolean sair = false;
     ControleCalculo controleCalculo = new ControleCalculo();
 
     void PainelControle () {
 
-        System.out.println("XXXXXXX Digite o tipo de operação desejada: XXXXXXX");
-        System.out.println("1. MULTIPLICAÇÃO;");
-        System.out.println("2. DIVISÃO;");
-        System.out.println("3. SOMA;");
-        System.out.println("4. SUBTRAÇÃO;");
-        System.out.println("0. SAIR;");
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-            escolher = input.nextLine();
+        while (!sair) {
 
-        
-        switch (escolher) { //daqui entra em ControleCalculo;
+            System.out.println("XXXXXXX Digite o tipo de operação desejada: XXXXXXX");
+            System.out.println("1. MULTIPLICAÇÃO;");
+            System.out.println("2. DIVISÃO;");
+            System.out.println("3. SOMA;");
+            System.out.println("4. SUBTRAÇÃO;");
+            System.out.println("0. SAIR;");
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+                escolher = input.nextLine();
 
-            case "1": //multiplicação
-                //aspas duplas para reconhecer como string e nao int
-                
-                controleCalculo.calcularMultiplicacao(3); // chama o método de calculo das classes
-                break;
+            switch (escolher) { //daqui entra em ControleCalculo;
 
-            case "2": //divisão
-                // a classe de controle calculo ja foi instanciada la em cima, basta chamar os métodos dela que chama os metodos das classes de calculo
-                controleCalculo.calcularDivisao(3);
-                break;
+                case "1": //multiplicação
+                    //aspas duplas para reconhecer como string e nao int
+                    
+                    controleCalculo.calcularMultiplicacao(3); // chama o método de calculo das classes
+                    break;
 
-            case "3": //soma 
+                case "2": //divisão
+                    // a classe de controle calculo ja foi instanciada la em cima, basta chamar os métodos dela que chama os metodos das classes de calculo
+                    controleCalculo.calcularDivisao(3);
+                    break;
 
-                controleCalculo.calcularSoma(3);
-                break;
+                case "3": //soma 
 
-            case "4": //subtração
+                    controleCalculo.calcularSoma(3);
+                    break;
 
-                controleCalculo.calcularSubtracao(3);
-                break;
+                case "4": //subtração
 
-            case "0":
+                    controleCalculo.calcularSubtracao(3);
+                    break;
 
-                System.out.println("Saindo...");
-                break;
+                case "0":
 
-            default:
+                    System.out.println("Saindo...");
+                    sair = true;
+                    break;
 
-                System.out.println("Dígito inválido!");
-                break;
+                default:
+
+                    System.out.println("Dígito inválido!");
+                    break;
+
+            }
 
         }
 

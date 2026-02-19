@@ -14,10 +14,30 @@ public class ControleCalculo {
     private String entrada;
     private double resultado;
     private ArrayList<Double> lista = new ArrayList <>();
-    private boolean condicao = false; 
+    private boolean condicao = false;
+    
+    void prepararCalculo () { // para calcular acumulo de numeros em diferentes operações
+ 
+        // 1. Pegamos o último resultado calculado
+        double resultadoAnterior = this.resultado;
+        // 2. Limpamos a lista de números antigos
+        this.lista.clear();
+        // 3. Se já existia um resultado, ele vira o ponto de partida da nova conta
+        if (resultadoAnterior != 0){
+            this.lista.add(resultadoAnterior);
+
+        }
+        //System.out.println("DEBUG: Lista atual: " + lista);
+        // 4. Resetamos a condição para permitir novas entradas
+        this.condicao = false;
+
+    }
 
     double calcularMultiplicacao (double resultado){
-            
+
+        this.condicao = false; // limpa a condição de encerramento antes de iniciar          
+        prepararCalculo();
+
             while (condicao == false) {
 
                 System.out.println("Digite um número para multiplicar. Digite '=' para resultado:");
@@ -27,6 +47,8 @@ public class ControleCalculo {
 
                     this.multiplicacao = new Multiplicacao (this); // precisa instanciar senão dá erro de NULL POINT
                     multiplicacao.calcular();
+
+                    break;
 
                 }
 
@@ -39,11 +61,14 @@ public class ControleCalculo {
 
             }
 
-            return resultado; // nao esquecer de retornar no fim do bloco
+        return this.getResultado(); // nao esquecer de retornar no fim do bloco
 
     }
 
     double calcularDivisao (double resultado) {
+
+        this.condicao = false; // limpa a condição de encerramento antes de iniciar
+        prepararCalculo();
 
         while (condicao == false) {
 
@@ -55,6 +80,9 @@ public class ControleCalculo {
                 this.divisao = new Divisao (this);
                 //(this) se refere a propria classe ControleCalculo, mas chamando a classe Divisão
                 divisao.calcular();
+
+                break;
+
             }
 
             else {
@@ -77,12 +105,15 @@ public class ControleCalculo {
 
         }
 
-        return resultado; // antes de criar o método na classe divisao, ele não estará retornando nada, pois o retorno ainda não existe
+        return this.getResultado(); // antes de criar o método na classe divisao, ele não estará retornando nada, pois o retorno ainda não existe
         //PRESTAR BASTANTE ATENÇÃO ONDE COLOCA O RETURN!!!
 
     }
 
     double calcularSoma (double resultado) {
+
+        this.condicao = false; // limpa a condição de encerramento antes de iniciar
+        prepararCalculo();
 
         while (condicao == false) {
 
@@ -94,6 +125,8 @@ public class ControleCalculo {
                 this.soma = new Soma(this);
                 soma.calcular();
 
+                break;
+
             }
 
             else {
@@ -101,15 +134,18 @@ public class ControleCalculo {
                 num = Double.parseDouble(entrada);
                 lista.add(num);
 
-            }
-
+            }       
+    
         }
 
-        return resultado; //prestar atenção onde fica o return!!!
+        return this.getResultado(); //prestar atenção onde fica o return!!!
 
     }
 
     double calcularSubtracao (double resultado) {
+
+        this.condicao = false; // limpa a condição de encerramento antes de iniciar
+        prepararCalculo();
 
         while (condicao == false) {
 
@@ -120,6 +156,8 @@ public class ControleCalculo {
 
                 this.subtracao = new Subtracao(this);
                 subtracao.calcular();
+
+                break;
 
             }
 
@@ -132,7 +170,7 @@ public class ControleCalculo {
 
         }
 
-        return resultado;
+        return this.getResultado(); // Pegamos o valor que a classe Subtracao gravou no controle
 
     }
 
