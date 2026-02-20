@@ -17,7 +17,7 @@ public class Controle {
             System.out.println("2. DIVISÃO;");
             System.out.println("3. SOMA;");
             System.out.println("4. SUBTRAÇÃO;");
-            System.out.println("C. Clear - Limpar calculo;");
+            System.out.println("C. CLEAR - Limpar calculo;");
             System.out.println("0. SAIR;");
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
                 escolher = input.nextLine();
@@ -50,13 +50,13 @@ public class Controle {
                     controleCalculo.clear();
                     break;
 
-                case "0":
+                case "0": //sair
 
                     System.out.println("Saindo...");
                     sair = true;
                     break;
 
-                default:
+                default: //erro de digitação
 
                     System.out.println("Dígito inválido!");
                     break;

@@ -27,7 +27,7 @@ public class ControleCalculo {
             this.lista.add(resultadoAnterior);
 
         }
-        //System.out.println("DEBUG: Lista atual: " + lista);
+        System.out.println("Valor atual: " + this.lista);
         // 4. Resetamos a condição para permitir novas entradas
         this.condicao = false;
 
@@ -37,7 +37,9 @@ public class ControleCalculo {
 
         this.lista.clear(); // limpa os números anteriores 
         resultado = 0; // reseta o resultado para zero
-        
+        System.out.println("Lista limpa! Valores resetados.");
+        System.out.println();
+
     }
 
     double calcularMultiplicacao (double resultado){
@@ -45,7 +47,7 @@ public class ControleCalculo {
         this.condicao = false; // limpa a condição de encerramento antes de iniciar          
         prepararCalculo();
 
-            while (condicao == false) {
+            while (!condicao) {
 
                 System.out.println("Digite um número para multiplicar. Digite '=' para resultado:");
                 entrada = input.nextLine();
@@ -61,9 +63,19 @@ public class ControleCalculo {
 
                 else {
 
-                    num = Double.parseDouble(entrada);
-                    lista.add(num); // adiciona a lista
+                    try { // correção de entrada para strings
 
+                        num = Double.parseDouble(entrada);
+                        lista.add(num); // adiciona a lista
+
+                    }
+
+                    catch (NumberFormatException e) { 
+
+                        System.out.println("Erro: Entrada inválida! Digite apenas números.");      
+
+                    }
+                    
                 }
 
             }
@@ -77,7 +89,7 @@ public class ControleCalculo {
         this.condicao = false; // limpa a condição de encerramento antes de iniciar
         prepararCalculo();
 
-        while (condicao == false) {
+        while (!condicao) {
 
             System.out.println("Digite um número para dividir. Digite '=' para resultado:");
             entrada = input.nextLine();
@@ -94,17 +106,16 @@ public class ControleCalculo {
 
             else {
 
-                num = Double.parseDouble(entrada);
+                try { //prevenção de erro, precisa limpar lá na classe
 
-                if (num == 0){ //prevenção de erro, precisa limpar lá na classe
-                
-                    System.out.println("Valor inválido! Não é possível dividir por zero.");
-
+                    num = Double.parseDouble(entrada);
+                    lista.add(num); // adiciona a lista de numeros calculados
+                    
                 }
 
-                else { //preste atenção nos else! tem que ter!!!
+                catch (NumberFormatException e) { //serve para tratar entradas que nao sejam strings válidas
 
-                    lista.add(num); // adiciona a lista de numeros calculados
+                    System.out.println("Erro: Entrada inválida! Digite apenas números.");      
 
                 }
 
@@ -122,7 +133,7 @@ public class ControleCalculo {
         this.condicao = false; // limpa a condição de encerramento antes de iniciar
         prepararCalculo();
 
-        while (condicao == false) {
+        while (!condicao) {
 
             System.out.println("Digite um número para somar. Digite '=' para resultado:");
             entrada = input.nextLine();
@@ -138,8 +149,18 @@ public class ControleCalculo {
 
             else {
 
-                num = Double.parseDouble(entrada);
-                lista.add(num);
+                try {
+
+                    num = Double.parseDouble(entrada);
+                    lista.add(num); 
+
+                }
+
+                catch (NumberFormatException e) {
+
+                    System.out.println("Erro: Entrada inválida! Digite apenas números.");      
+
+                }
 
             }       
     
@@ -154,7 +175,7 @@ public class ControleCalculo {
         this.condicao = false; // limpa a condição de encerramento antes de iniciar
         prepararCalculo();
 
-        while (condicao == false) {
+        while (!condicao) {
 
             System.out.println("Digite um número para subtrair. Digite '=' para resultado:");
             entrada = input.nextLine();
@@ -170,9 +191,19 @@ public class ControleCalculo {
 
             else {
 
-                num = Double.parseDouble (entrada);
-                lista.add(num);
+                try {
 
+                    num = Double.parseDouble (entrada);
+                    lista.add(num);
+                    
+                }
+
+                catch (NumberFormatException e) {
+
+                    System.out.println("Erro: Entrada inválida! Digite apenas números.");      
+
+                }
+                
             }
 
         }

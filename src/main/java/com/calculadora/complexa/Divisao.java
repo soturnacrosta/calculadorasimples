@@ -4,6 +4,7 @@ import java.util.List;
 public class Divisao implements Operacoes {
 
     private ControleCalculo controleCalculo; // para acessar getters e setters. evita null point exceptions
+    double res;
 
     public Divisao(ControleCalculo controleCalculo) {
         this.controleCalculo = controleCalculo;
@@ -13,30 +14,44 @@ public class Divisao implements Operacoes {
     public double calcular() {
         
         List<Double> lista = controleCalculo.getLista(); //cria uma variavel lista do tipo Lista para acessar a posição da lista. ele deve ficar dentro do método!!!
-        double res = lista.get(0); //instancie o método, não a classe!
         // precisa pegar a posição do índice
 
-        for (int i = 1; i < lista.size(); i++) {
+        if (lista.size() > 0) { //verifica se há itens na lista para não dar erro
 
-            double n = lista.get(i);
+            res = lista.get(0); //instancie o método, não a classe! verifique se há itens na lista antes de acessar a posição
 
-            if (n == 0) {
-                
-                System.out.println("Erro: Divisão por zero!");
-                // tratar o erro após a prevenção
-                lista.clear(); //limpa a lista suja
-                controleCalculo.setResultado(0);
-                controleCalculo.setCondicao(true); // Para o laço do painel se necessário
-                
-                return 0;
+            for (int i = 1; i < lista.size(); i++) {
+
+                        double n = lista.get(i);
+
+                        if (n == 0) { //variaveis double se trata com if else na divisao com 0
+                            
+                            System.out.println("Erro: Divisão por zero!");
+                            // tratar o erro após a prevenção
+                            lista.clear(); //limpa a lista suja
+                            controleCalculo.setResultado(0);
+                            controleCalculo.setCondicao(true); // Para o laço do painel se necessário
+                            
+                            return 0;
+
+                        }
+        
+                res /= n;
 
             }
-        
-            res /= n;
 
         }
-        
+
+        else {
+
+            System.out.println("Erro! Sem números para calcular.");
+            System.out.println();
+            
+        }
+
             System.out.println("O resultado é: " + res);
+            System.out.println("");
+
             controleCalculo.setCondicao(true); //finalizar o laço while
             controleCalculo.setResultado(res); // TEM QUE SALVAR NA VARIAVEL GLOBAL!
 

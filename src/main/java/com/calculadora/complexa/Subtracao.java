@@ -28,6 +28,8 @@ public class Subtracao implements Operacoes {
                 }
 
                 System.out.println("O resultado é: " + res);
+                System.out.println("");
+                
                 controleCalculo.setCondicao(true); //finalizar o laço while
                 controleCalculo.setResultado(res); // Salva no global!
                 return res;

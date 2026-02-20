@@ -13,18 +13,31 @@ public class Multiplicacao implements Operacoes {
         
         double multiplicacaoLocal = 1;
 
-        for (double n : controleCalculo.getLista()){
+        if (controleCalculo.getLista().size() > 0) {
 
-            multiplicacaoLocal *= n;
-            // não põe o return aqui
+            for (double n : controleCalculo.getLista()){
+
+                        multiplicacaoLocal *= n;
+                        // não põe o return aqui
+                    }
+
+                        controleCalculo.setResultado(multiplicacaoLocal);
+
+                        System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
+                        System.out.println("");
+
+                        controleCalculo.setCondicao(true);
+
+             }
+
+        else {
+
+            System.out.println("Erro! Sem números para calcular.");
+            System.out.println();
+
         }
 
-            controleCalculo.setResultado(multiplicacaoLocal);
-
-            System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
-            controleCalculo.setCondicao(true);
-
-            return multiplicacaoLocal; //retorna o numero do resultado
+        return multiplicacaoLocal; //retorna o numero do resultado
 
     }
 

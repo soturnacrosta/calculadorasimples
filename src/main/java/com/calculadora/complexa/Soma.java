@@ -22,6 +22,8 @@ public class Soma implements Operacoes {
         controleCalculo.setResultado(somaLocal);
 
         System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
+        System.out.println("");
+
         controleCalculo.setCondicao(true);
 
         return somaLocal;
