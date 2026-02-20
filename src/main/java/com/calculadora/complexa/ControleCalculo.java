@@ -20,14 +20,16 @@ public class ControleCalculo {
  
         // 1. Pegamos o último resultado calculado
         double resultadoAnterior = this.resultado;
-        // 2. Limpamos a lista de números antigos
+        // 2. Limpamos a lista de números antigo
         this.lista.clear();
         // 3. Se já existia um resultado, ele vira o ponto de partida da nova conta
         if (resultadoAnterior != 0){
             this.lista.add(resultadoAnterior);
 
         }
-        System.out.println("Valor atual: " + this.lista);
+        
+        System.out.println("Valor atual: " + (lista.isEmpty() ? "[0.0]" : lista)); // depuração amigavel para o usuario
+
         // 4. Resetamos a condição para permitir novas entradas
         this.condicao = false;
 
@@ -37,8 +39,12 @@ public class ControleCalculo {
 
         this.lista.clear(); // limpa os números anteriores 
         resultado = 0; // reseta o resultado para zero
+        this.lista.add(0.0); // reseta a lista para zero
+
         System.out.println("Lista limpa! Valores resetados.");
         System.out.println();
+
+        // DEBUG: Isso vai te mostrar se o 0 realmente entrou
 
     }
 
@@ -174,6 +180,12 @@ public class ControleCalculo {
 
         this.condicao = false; // limpa a condição de encerramento antes de iniciar
         prepararCalculo();
+
+        if (this.lista.isEmpty()) { // apenas a subtração precisa começar do zero após o clear. as outras operações podem dar problema
+
+            this.lista.add(0.0);
+            
+        }
 
         while (!condicao) {
 
