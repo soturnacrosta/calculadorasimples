@@ -33,6 +33,13 @@ public class ControleCalculo {
 
     }
 
+    void clear () { // limpar calculo
+
+        this.lista.clear(); // limpa os números anteriores 
+        resultado = 0; // reseta o resultado para zero
+        
+    }
+
     double calcularMultiplicacao (double resultado){
 
         this.condicao = false; // limpa a condição de encerramento antes de iniciar          

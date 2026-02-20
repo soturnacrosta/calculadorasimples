@@ -17,6 +17,7 @@ public class Controle {
             System.out.println("2. DIVISÃO;");
             System.out.println("3. SOMA;");
             System.out.println("4. SUBTRAÇÃO;");
+            System.out.println("C. Clear - Limpar calculo;");
             System.out.println("0. SAIR;");
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
                 escolher = input.nextLine();
@@ -42,6 +43,11 @@ public class Controle {
                 case "4": //subtração
 
                     controleCalculo.calcularSubtracao(3);
+                    break;
+
+                case "c": //clear
+
+                    controleCalculo.clear();
                     break;
 
                 case "0":
