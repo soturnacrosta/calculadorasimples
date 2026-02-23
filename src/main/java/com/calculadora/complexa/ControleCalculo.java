@@ -24,15 +24,15 @@ public class ControleCalculo {
         this.lista.clear();
         // 3. Se já existia um resultado, ele vira o ponto de partida da nova conta
         if (resultadoAnterior != 0){
+
             this.lista.add(resultadoAnterior);
 
         }
         
         System.out.println("Valor atual: " + (lista.isEmpty() ? "[0.0]" : lista)); // depuração amigavel para o usuario
-
         // 4. Resetamos a condição para permitir novas entradas
         this.condicao = false;
-
+        // 5. Permite o loop
     }
 
     void clear () { // limpar calculo

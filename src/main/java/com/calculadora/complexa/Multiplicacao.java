@@ -11,7 +11,7 @@ public class Multiplicacao implements Operacoes {
     @Override
     public double calcular() {
         
-        double multiplicacaoLocal = 1;
+        double multiplicacaoLocal = 1; //numero neutro
 
         if (controleCalculo.getLista().size() > 0) {
 

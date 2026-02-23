@@ -4,7 +4,7 @@ import java.util.List;
 public class Divisao implements Operacoes {
 
     private ControleCalculo controleCalculo; // para acessar getters e setters. evita null point exceptions
-    double res;
+    private double res;
 
     public Divisao(ControleCalculo controleCalculo) {
         this.controleCalculo = controleCalculo;
