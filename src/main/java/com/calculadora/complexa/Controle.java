@@ -25,7 +25,7 @@ public class Controle {
             switch (escolher) { //daqui entra em ControleCalculo;
 
                 case "1": //multiplicação
-                    //aspas duplas para reconhecer como string e nao int
+                    //aspas duplas para reconhecer como string e naRo int
                     
                     controleCalculo.calcularMultiplicacao(3); // chama o método de calculo das classes
                     break;

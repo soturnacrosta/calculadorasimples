@@ -24,7 +24,7 @@ public class Multiplicacao implements Operacoes {
                         controleCalculo.setResultado(multiplicacaoLocal);
 
                         System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
-                        System.out.println("");
+                        System.out.println();
 
                         controleCalculo.setCondicao(true);
 

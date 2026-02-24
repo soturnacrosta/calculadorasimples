@@ -13,18 +13,30 @@ public class Soma implements Operacoes {
         
         double somaLocal = 0;
 
-        for (double n : controleCalculo.getLista()){ //aqui ele não precisa encontrar a primeira posição na lista, pois a ordem dos fatores não altera o resultado
+        if (controleCalculo.getLista().size() > 0) {
 
-            somaLocal += n;
+            for (double n : controleCalculo.getLista()){ //aqui ele não precisa encontrar a primeira posição na lista, pois a ordem dos fatores não altera o resultado
+
+                somaLocal += n;
+
+            }
+
+            controleCalculo.setResultado(somaLocal);
+
+            System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
+            System.out.println();
+
+            controleCalculo.setCondicao(true);
 
         }
 
-        controleCalculo.setResultado(somaLocal);
+        else {
 
-        System.out.println("O resultado é: " + controleCalculo.getResultado()); //a depuração fica aqui
-        System.out.println("");
 
-        controleCalculo.setCondicao(true);
+            System.out.println("Erro! Sem números para calcular.");
+            System.out.println();
+
+        }
 
         return somaLocal;
 

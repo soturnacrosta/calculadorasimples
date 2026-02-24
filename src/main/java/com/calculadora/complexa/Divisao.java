@@ -27,6 +27,7 @@ public class Divisao implements Operacoes {
                         if (n == 0) { //variaveis double se trata com if else na divisao com 0
                             
                             System.out.println("Erro: Divisão por zero!");
+                            System.out.println();
                             // tratar o erro após a prevenção
                             lista.clear(); //limpa a lista suja
                             controleCalculo.setResultado(0);
@@ -50,7 +51,7 @@ public class Divisao implements Operacoes {
         }
 
             System.out.println("O resultado é: " + res);
-            System.out.println("");
+            System.out.println();
 
             controleCalculo.setCondicao(true); //finalizar o laço while
             controleCalculo.setResultado(res); // TEM QUE SALVAR NA VARIAVEL GLOBAL!

@@ -18,8 +18,8 @@ public class Subtracao implements Operacoes {
         //tentar acessar a posição 0, o Java vai lançar um erro chamado IndexOutOfBoundsException.
         
             double res = lista.get(0);
-
-                for (int i = 1; i < lista.size(); i++){
+ 
+                for (int i = 1; i < lista.size(); i++){ //inicia do 1 para nao calcular por ele mesmo
 
                     double n = lista.get(i);
 
@@ -28,7 +28,7 @@ public class Subtracao implements Operacoes {
                 }
 
                 System.out.println("O resultado é: " + res);
-                System.out.println("");
+                System.out.println();
                 
                 controleCalculo.setCondicao(true); //finalizar o laço while
                 controleCalculo.setResultado(res); // Salva no global!
@@ -38,7 +38,8 @@ public class Subtracao implements Operacoes {
 
         else {
 
-            System.out.println("Lista vazia!"); //depuração de lista vazia 
+            System.out.println("Erro! Sem números para calcular."); //depuração de lista vazia 
+            System.out.println();
 
             return 0; //retorna nada
 

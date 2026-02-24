@@ -39,7 +39,6 @@ public class ControleCalculo {
 
         this.lista.clear(); // limpa os números anteriores 
         resultado = 0; // reseta o resultado para zero
-        this.lista.add(0.0); // reseta a lista para zero
 
         System.out.println("Lista limpa! Valores resetados.");
         System.out.println();
@@ -183,7 +182,7 @@ public class ControleCalculo {
 
         if (this.lista.isEmpty()) { // apenas a subtração precisa começar do zero após o clear. as outras operações podem dar problema
 
-            this.lista.add(0.0);
+            this.lista.add(0.0); // reinicia para 0 após o 0 do clear + prepararCalculo() que apagaria ele
             
         }
 
